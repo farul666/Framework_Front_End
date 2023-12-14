@@ -3,7 +3,8 @@ document.addEventListener('DOMContentLoaded',function(){
 });
 
 function fetchItems() {
-const token = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzAyNTM3OTEzLCJpYXQiOjE3MDI1Mzc2MTMsImp0aSI6IjMwN2EzMTI2Mzk1ODQzNTg4Y2EyZTVlMTU1ZjBiNzljIiwidXNlcl9pZCI6MX0.LWtBbs2nnTx1QtnDe9hzRHrW5eTstPRlgrKD3og2JzU'
+// const token = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzAyNTM3OTEzLCJpYXQiOjE3MDI1Mzc2MTMsImp0aSI6IjMwN2EzMTI2Mzk1ODQzNTg4Y2EyZTVlMTU1ZjBiNzljIiwidXNlcl9pZCI6MX0.LWtBbs2nnTx1QtnDe9hzRHrW5eTstPRlgrKD3og2JzU'
+    const token = localStorage.getItem('accesToken');
     fetch('http://127.0.0.1:8000/apia/item/',
     {
         headers: {

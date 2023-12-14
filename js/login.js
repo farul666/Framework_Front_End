@@ -21,7 +21,7 @@ document.getElementById('loginform').addEventListener('submit',function(event) {
         localStorage.setItem('accesToken',data.acces);
         messageDiv.textContent = 'login succesful';
         messageDiv.style.color = 'green';
-        // redirect ataau update ui setelah login sukses
+        // redirect atau update ui setelah login sukses
         // window.location.href = '/MateriKuliah/Framework/tes/coba.html';
     }
    })
