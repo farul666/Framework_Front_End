@@ -29,8 +29,32 @@ function displayItems (items) {
                     <h5 class="card-title">${item.name}</h5>
                     <p class="card-text">${item.description} </p>
                 </div>
+                <button type="button" class="btn btn-warning update-btn" data-bs-toggle="modal" data-bs-target="#editModal" data-id="${item.id}">Edit</button>
             </div>
         `;
         itemsContainer.appendChild(itemElement);
     });
+
+    document.querySelectorAll('.update-btn').forEach(button =>{
+        button.addEventListener('click',function(){
+            openUpdateModal(this.getAttribute('data-id'));
+        });
+    });
 }
+
+    function openUpdateModal(id){
+        const token = localStorage.getItem('accessToken')
+        fetch(`http://127.0.0.1:8000/apia/item/${id}`,{
+            headers:{
+                'Authorization' : `Bearer ${token}`
+            }
+        })
+        .then(response => response.json())
+        .then(data =>{
+            document.getElementById('ubah-nama').value = data.name;
+            document.getElementById('ubah-deskripsi').value = data.description;
+            document.getElementById('updateItemId').value = data.id;
+            $('#updateModal').modal('show');
+        })
+        .catch(error => console.error('Error :',error ))
+    }

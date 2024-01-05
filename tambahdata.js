@@ -24,10 +24,10 @@ document.getElementById('tambah_data').addEventListener('submit', function(e){
             throw new Error ('Salah!!!');
         }
     })
-    .then (data =>{
+    .then(data =>{
         console.log('Success :',data);
-        $('exampleModal').modal('hide');
-        fetchItems();
+        $('#exampleModal').modal('hide');
+        window.location.reload()
     })
     .catch(error =>{
         console.error('Error :',error);
