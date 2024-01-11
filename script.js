@@ -29,7 +29,8 @@ function displayItems (items) {
                     <h5 class="card-title">${item.name}</h5>
                     <p class="card-text">${item.description} </p>
                 </div>
-                <button type="button" class="btn btn-warning update-btn" data-bs-toggle="modal" data-bs-target="#editModal" data-id="${item.id}">Edit</button>
+                <button type="button" class="btn btn-warning update-btn" data-bs-toggle="modal" data-bs-target="#editModal" data-id="${item.id}"><i class="fas fa-edit"></i>Update</button>
+                <button type="button" class="btn btn-danger delete-btn" data-bs-toggle="modal" data-bs-target="#hapusModal" data-id="${item.id}"><i class="fas fa-delete"></i>Delete</button>
             </div>
         `;
         itemsContainer.appendChild(itemElement);
